@@ -46,7 +46,7 @@ networkPropgate_vector<-function(f.0,alpha,Mat){
     itcnt = itcnt + 1;       
     # print(itcnt)
   }
-  
+  names(f.t)<-names(f.0)
   return(f.t)
 }
 
