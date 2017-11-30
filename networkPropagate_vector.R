@@ -1,14 +1,16 @@
+colNorm<-function(mat){
+  if(sum(mat)>0){
+    return(mat/sum(mat))
+  }else{
+    return(mat)
+  }
+}
+
 networkPropgate_vector<-function(f.0,alpha,Mat){
   # Network progate a signal on a network
   
   # normalized adjacent matrix in column-wise way
-  colNorm<-function(mat){
-    if(sum(mat)>0){
-      return(mat/sum(mat))
-    }else{
-      return(mat)
-    }
-  }
+
   
   AdjMat<-apply(Mat,2,function(x)colNorm(x))
   
@@ -198,7 +200,7 @@ networkPropgate_randomNetwork2<-function(f.0,alpha,Mat,randomIter = 100){
     }
     return(f.t)
   }
-  f.tt <- mclapply(1:randomIter, function(x)calNet(x), mc.core = 32)
+  f.tt <- mclapply(1:randomIter, function(x){calNet(x)}, mc.core = 32)
   # normalized adjacent matrix in column-wise way
   return(f.tt)
 }
