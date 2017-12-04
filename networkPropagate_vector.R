@@ -202,7 +202,7 @@ networkPropgate_randomNetwork2 <-function(f.0,alpha,Mat,k){
 
 
 
-networkPropgate_randomSeed<-function(f.0,alpha,Mat,randomIter = 100, MC.NUM){
+networkPropgate_randomSeed<-function(f.0,alpha,Mat,k){
   # Network progate a signal on a random network
   
   f.0 <- f.0/sum(f.0)
