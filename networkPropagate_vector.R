@@ -18,8 +18,8 @@ networkPropgate_vector<-function(f.0,alpha,Mat){
   
   f.0 <- f.0/sum(f.0)
   
-  tof = 1e-12;
-  max_iteration = 1000000;
+  tof = 1e-10;
+  max_iteration = 10000;
   
   if(length(f.0) != nrow(AdjMat)){
     print('Key missmatch error')
